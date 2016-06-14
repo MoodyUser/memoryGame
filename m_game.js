@@ -37,10 +37,19 @@ let populate_cards = (keyword, tile1Id, tile2Id) => {
 
 let content1 = [];
 
-for (var i = 0; i < 2; i++) {
+
+
+for (var i = 0; i < 12; i++) {
     let temp = new Card('a' + i);
     let temp1 = new Card('b' + i);
     populate_cards('dogs', 'a' + i, 'b' + i);
-    $("#can").append(temp.getAsHtml());
-    $("#can").append(temp1.getAsHtml());
+    content1.push(temp.getAsHtml()) ;
+    content1.push(temp1.getAsHtml()) ;
+  //  $("#can").append(temp.getAsHtml());
+    //$("#can").append(temp1.getAsHtml());
+}
+
+let co = _.shuffle(content1) ;
+for (var i = 0; i < content1.length; i++) {
+  $("#can").append(co[i]) ;
 }
