@@ -12,9 +12,6 @@ class Card {
     getAsHtml() {
         return `<span id="${this.id}" class="tile" ></span>`;
 
-        /* return "<span class=' tile " +
-         this.pic_url + "'></span>" */
-
     }
 }
 
@@ -39,22 +36,6 @@ let populate_cards = (keyword, tile1Id, tile2Id) => {
 }
 
 let content1 = [];
-
-
-let ims = [
-    'glyphicon glyphicon-magnet',
-    'glyphicon glyphicon-align-center',
-    'glyphicon glyphicon-home',
-    'glyphicon glyphicon-eur',
-    'glyphicon glyphicon-cog',
-    'glyphicon glyphicon-picture',
-    'glyphicon glyphicon-eye-open',
-    'glyphicon glyphicon-hand-up',
-    'glyphicon glyphicon-collapse-up',
-    'glyphicon glyphicon-knight',
-    'glyphicon glyphicon-lamp',
-];
-
 
 for (var i = 0; i < 2; i++) {
     let temp = new Card('a' + i);
