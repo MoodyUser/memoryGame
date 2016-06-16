@@ -1,10 +1,46 @@
 
-
-.tile    {
+.tile {
     height: 150px;
     width: 150px;
     border-radius: 5px;
-    display: inline-block;
-    background-size: cover;
-    margin: 5px;
+    /*display: inline-block;*/
+    background-size: 150px 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-attachment: scroll;
+    background-image: url("flipedcard.jpg");
+    /*margin: 5px;*/
+}
+
+.flip-in {
+    animation: stretch-in 1s;
+}
+
+.flip-out {
+    animation: stretch-out 1s;
+}
+
+@keyframes stretch-in {
+    from {
+        width: 150px;
+        background-size: 150px 150px;
+    }
+    to {
+        width: 0;
+        background-size: 0 150px;
+    }
+}
+
+@keyframes stretch-out {
+    from {
+        width: 0;
+        background-size: 0 150px;
+    . flip
+    }
+    to {
+        width: 150px;
+        background-size: 150px 150px;
+    . flip
+    }
 }
