@@ -1,46 +1,88 @@
+#gamePanel {
+    margin: auto;
+}
+
+.loading {
+    background-image: url("loading.mp4");
+    background-size: 500px;
+}
 
 .tile {
-    height: 150px;
+    height: 180px;
     width: 150px;
     border-radius: 5px;
-    /*display: inline-block;*/
-    background-size: 150px 150px;
+    /*display: inline-block; crash the margin-left right auto center capability*/
+    background-size: 150px 180px;
     margin-left: auto;
     margin-right: auto;
-    background-position: center;
+    background-position: 100%;
     background-attachment: scroll;
     background-image: url("flipedcard.jpg");
     /*margin: 5px;*/
 }
 
 .flip-in {
-    animation: stretch-in 1s;
+    animation: stretch 0.7s ease-in;
 }
 
 .flip-out {
-    animation: stretch-out 1s;
+    animation: stretch-out 0.7s ease-out;
 }
 
-@keyframes stretch-in {
+@keyframes stretch {
     from {
         width: 150px;
-        background-size: 150px 150px;
+        background-size: 150px 180px;
     }
     to {
         width: 0;
-        background-size: 0 150px;
+        background-size: 0 180px;
     }
 }
 
 @keyframes stretch-out {
     from {
         width: 0;
-        background-size: 0 150px;
-    . flip
+        background-size: 0 180px;
     }
+
     to {
         width: 150px;
-        background-size: 150px 150px;
-    . flip
+        background-size: 150px 180px;
     }
+
 }
+
+.playing {
+    background-color: yellow;
+}
+
+
+
+.score-panel {
+    /*background-color: black;*/
+    width: 10%;
+    height: 300px;
+    position: fixed;
+    top: 0;
+    left: 10px;
+}
+
+@media (max-width: 900px) {
+    .score-panel {
+        /*background-color: black;*/
+        width: 90%;
+        position: relative;
+    }
+
+}
+
+/*@keyframes float-up {*/
+/*from {*/
+
+/*}*/
+/*to {*/
+
+/*}*/
+/*}*/
+
