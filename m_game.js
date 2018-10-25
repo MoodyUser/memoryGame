@@ -109,6 +109,18 @@ $(document).ready(function () {
                 .map((v)=> {
                     return v['media']['m']
                 });
+        }).catch(data => {
+            return $.getJSON("flickr.json", {
+                tags: keyword,
+                tagmode: "any",
+                format: "json"
+            }
+        ).then(data => {
+            return data.items.slice(0, NUMBER_OF_CARDS_IN_GAME)
+                .map((v)=> {
+                    return v['media']['m']
+                });
+        });
         });
     };
 
@@ -152,6 +164,7 @@ $(document).ready(function () {
             'loading...' +
             '</video>';
         $GAME_PANEL.html(gif);
+        
         getImages('cats').then(urls=>loadImages(urls).then(urls => {
             setTimeout(
                 ()=> {
