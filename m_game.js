@@ -98,8 +98,8 @@ $(document).ready(function () {
         }
     }
 
-    let getImages = (keyword) => {
-        return $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
+    let getImages = (keyword, stub) => {
+        return $.getJSON(!!stub? "flickr.json":"http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
                 tags: keyword,
                 tagmode: "any",
                 format: "json"
@@ -109,18 +109,8 @@ $(document).ready(function () {
                 .map((v)=> {
                     return v['media']['m']
                 });
-        }).catch(data => {
-            return $.getJSON("flickr.json", {
-                tags: keyword,
-                tagmode: "any",
-                format: "json"
-            }
-        ).then(data => {
-            return data.items.slice(0, NUMBER_OF_CARDS_IN_GAME)
-                .map((v)=> {
-                    return v['media']['m']
-                });
-        });
+        }).fail(data => {
+            return getImages(keyword, true)
         });
     };
 
