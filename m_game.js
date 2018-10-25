@@ -99,7 +99,7 @@ $(document).ready(function () {
     }
 
     let getImages = (keyword, stub) => {
-        return $.getJSON(!!stub? "flickr.json":"http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
+        return $.getJSON(!!stub? "https://raw.githubusercontent.com/Yonimdo/memoryGame/master/flickr.json":"http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
                 tags: keyword,
                 tagmode: "any",
                 format: "json"
